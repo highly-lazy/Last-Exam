@@ -1,0 +1,152 @@
+.service_card {
+    max-width: 512px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #FFF;
+    margin-bottom: 70px;
+    
+
+    &-header {
+        max-width: 100%;
+        height: 265px;
+
+        & img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &_body {
+        padding: 32px;
+
+        &-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & p {
+                color: #4E596B;
+                font-family: "Saira Medium";
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 35px;
+                letter-spacing: -0.42px;
+            }
+        }
+
+        & h4 {
+            color: #324361;
+            font-family: "Saira Semibold";
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 35px;
+            letter-spacing: -0.75px;
+            margin: 21px 0 33px 0;
+        }
+
+        &-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & p {
+                color: #5E6775;
+                font-family: "Saira Bold";
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 35px;
+                letter-spacing: -0.66px;
+            }
+
+            & i {
+                color: #5E6775;
+                font-family: "Saira Bold";
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 35px;
+                letter-spacing: -0.66px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 565px) {
+    .service_card {
+        max-width: 512px;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #FFF;
+
+        &-header {
+            max-width: 100%;
+            height: 200px;
+
+            & img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &_body {
+            padding: 32px;
+
+            &-top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & p {
+                    color: #4E596B;
+                    font-family: "Saira Medium";
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 35px;
+                    letter-spacing: -0.42px;
+                }
+            }
+
+            & h4 {
+                color: #324361;
+                font-family: "Saira Semibold";
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                letter-spacing: -0.75px;
+                margin: 21px 0 33px 0;
+            }
+
+            &-bottom {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & p {
+                    color: #5E6775;
+                    font-family: "Saira Bold";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 35px;
+                    letter-spacing: -0.66px;
+                }
+
+                & i {
+                    color: #5E6775;
+                    font-family: "Saira Bold";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 35px;
+                    letter-spacing: -0.66px;
+                }
+            }
+        }
+    }
+}
