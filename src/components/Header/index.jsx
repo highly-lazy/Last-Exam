@@ -1,5 +1,6 @@
 import "./style.scss";
 import logo from "../../assets/icons/logo.svg";
+import {Link} from "react-router-dom"
 const index = () => {
   return (
     <header>
@@ -22,7 +23,9 @@ const index = () => {
                 </a>
               </li>
             </ul>
-            <button className="">Join</button>
+            <Link to="/signin">
+              <button>Join</button>
+            </Link>
           </div>
         </nav>
       </div>

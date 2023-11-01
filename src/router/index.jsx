@@ -10,6 +10,7 @@ import Kurs from "../Dashboard/Kurslar";
 import Buyurtmachilar from "../Dashboard/Buyurtmachilar";
 import Xizmatlar from "../Dashboard/Xizmatlar";
 import NotFound from "../pages/NotFound";
+import SignIn from "../pages/SignIn";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path:"/signin",
+        element: <SignIn/>
+      }
     ],
   },
   {

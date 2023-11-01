@@ -20,6 +20,14 @@ body {
   font-family: sans-serif;
 }
 
+.ant-form-item-row {
+    display: block;
+}
+
+.ant-form-item-label {
+    display: flex;
+}
+
 .container {
   max-width: 1668px;
   margin: 0 auto;
