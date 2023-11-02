@@ -51,7 +51,7 @@ const data = [
     key: 1,
     number: 1,
     fish: "Thomas Müller",
-    telefon: "+9989999999",
+    telefon: "+998999999999",
     kurs: "Bootcamp Foundation",
     register: "01.11.2023",
   },

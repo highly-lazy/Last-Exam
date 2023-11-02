@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import "./style.scss";
 
+
 const index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
@@ -20,7 +21,8 @@ const index = () => {
   const [order, setOrder] = useState("");
   const [about, setAbout] = useState("");
   const [name, setName] = useState("");
-  const [imageLink, setimageLink] = useState("");
+
+  const [fileLink, setfileLink] = useState("")
   const [editingRecord, setEditingRecord] = useState(null);
   const [editModalVisible, setEditModalVisible] = useState(false);
 
@@ -31,7 +33,8 @@ const index = () => {
         order,
         about,
         name,
-        imageLink,
+        
+        fileLink,
         time: moment().format("YYYY-MM-DD HH:mm:ss"),
       },
     ];
@@ -39,7 +42,7 @@ const index = () => {
     setOrder("");
     setAbout("");
     setName("");
-    setimageLink("");
+    setfileLink("");
   };
 
   const handleEdit = (record) => {
@@ -47,7 +50,7 @@ const index = () => {
     setOrder(record.order);
     setAbout(record.about);
     setName(record.name);
-    setimageLink(record.imageLink);
+    setfileLink(record.fileLink);
     setEditModalVisible(true);
   };
 
@@ -59,7 +62,7 @@ const index = () => {
             order,
             about,
             name,
-            imageLink,
+            fileLink,
           }
         : item
     );
@@ -68,7 +71,7 @@ const index = () => {
     setOrder("");
     setAbout("");
     setName("");
-    setimageLink("");
+    setfileLink("");
     setEditModalVisible(false);
   };
 
@@ -167,10 +170,12 @@ const index = () => {
           <Form.Item label="Kurs nomi">
             <Input value={name} onChange={(e) => setName(e.target.value)} />
           </Form.Item>
-          <Form.Item label="Rasm linki">
+
+          <Form.Item label="Fayl yuklang">
             <Input
-              value={imageLink}
-              onChange={(e) => setimageLink(e.target.value)}
+              type="file"
+              value={fileLink}
+              onChange={(e) => setfileLink(e.target.value)}
             />
           </Form.Item>
 
@@ -206,11 +211,14 @@ const index = () => {
             value={about}
             onChange={(e) => setAbout(e.target.value)}
           />
-          <Input
-            placeholder="Rasm linki"
-            value={imageLink}
-            onChange={(e) => setimageLink(e.target.value)}
-          />
+
+          
+            <Input
+              type="file"
+              value={fileLink}
+              onChange={(e) => setfileLink(e.target.value)}
+            />
+          
           <Button onClick={handleAdd}>Add</Button>
         </Space>
       </Modal>

@@ -1,27 +1,62 @@
-import React from "react";
-import { Outlet, NavLink, Link } from "react-router-dom";
-import { Breadcrumb } from "antd";
+import React, { useState } from "react";
+import { Outlet, NavLink ,Link} from "react-router-dom";
+import { Breadcrumb,Dropdown, Space } from "antd";
 import "./style.scss";
+import logo from "../../assets/icons/logo.svg";
 
-const index = () => {
+const items = [
+  {
+    key: "0",
+    label: (
+      <Space>
+        <Link to={`/signin`}>Chiqish</Link>
+
+      </Space>
+    ),
+  },
+];
+
+const Index = () => {
+
+  const [sidebarVisible, setSidebarVisible] = useState(true);
+
+  const toggleSidebar = () => {
+    setSidebarVisible(!sidebarVisible);
+  };
+
   return (
-    <div className="ssss">
+    <div>
       <header className="flex items-center justify-between h-[80px] px-[50px] head">
-        <a href="#">MW</a>
+        <img src={logo} alt="" />
 
         <div className="flex items-center gap-5 login">
-          <button className="flex items-center">
+          <button className="flex items-center" onClick={toggleSidebar}>
             <i className="bx bx-menu text-[30px]"></i>
           </button>
           <div className="flex items-center gap-1 user">
-            <i className="bx bxs-user-circle text-[30px]"></i>
+            <Dropdown
+              className="text-[#553737] flex items-center"
+              menu={{
+                items,
+              }}
+              trigger={["click"]}
+            >
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  <div className="flex items-center gap-1 user">
+                    <i className="bx bxs-user-circle text-[30px]"></i>
+                  </div>
+                  Abror Davlatov
+                </Space>
+              </a>
+            </Dropdown>
           </div>
-            <p className="head text-white">Abror Davlatov</p>
+          
         </div>
       </header>
 
       <div className="down">
-        <div className="sidebar">
+        <div className={`sidebar ${sidebarVisible ? "" : "hidden"}`}>
           <ul>
             <li>
               <NavLink to="/dashboard" className="nav__link">
@@ -66,4 +101,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

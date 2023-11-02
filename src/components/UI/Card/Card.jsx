@@ -1,13 +1,29 @@
+import { useState } from "react";
 import "./style.scss";
+import { Modal,Button } from "antd";
+
+
 
 const Card = ({ state: { title, image, description } }) => {
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const showModal = () => {
+     setIsModalOpen(true);
+   };
+   const handleOk = () => {
+     setIsModalOpen(false);
+   };
+   const handleCancel = () => {
+     setIsModalOpen(false);
+   };
   return (
     <div className="card">
-      <img
-        src={image}
-        alt="Image"
-        className=" rounded-t-[20px] object-contain w-full"
-      />
+      <div className="card-header">
+        <img
+          src={image}
+          alt="Image"
+          className=" rounded-t-[20px] object-contain w-full"
+        />
+      </div>
 
       <div className="about__card">
         <div className="title__card--about">
@@ -18,7 +34,7 @@ const Card = ({ state: { title, image, description } }) => {
 
         <div className="card__price">
           <p>$1999.99</p>
-          <button>
+          <button onClick={() => showModal()}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="26"
@@ -42,6 +58,23 @@ const Card = ({ state: { title, image, description } }) => {
           </button>
         </div>
       </div>
+      <Modal
+        title="Basic Modal"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+
+        <div className="div">
+          
+        </div>
+
+        <Button>
+          Add
+        </Button>
+
+        
+      </Modal>
     </div>
   );
 };
