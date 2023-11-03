@@ -7,6 +7,17 @@ import { useNavigate } from 'react-router';
 
 const SignUp = () => {
   const navigate = useNavigate();
+    useEffect(() => {
+      userApi
+        .getMe()
+        .then((res) => {
+          
+          localStorage.setItem("user", res.data.admin.fullName);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, []);
 
   const onFinish = (values) => {
     console.log('Success:', values);
