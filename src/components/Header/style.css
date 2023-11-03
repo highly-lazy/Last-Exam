@@ -1,0 +1,120 @@
+header {
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  z-index: 999;
+  top: 0;
+}
+header .navbar {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .navbar_info {
+  display: flex;
+  -moz-column-gap: 243px;
+       column-gap: 243px;
+}
+header .navbar_info_list {
+  display: flex;
+  -moz-column-gap: 72px;
+       column-gap: 72px;
+  align-items: center;
+}
+header .navbar_info_list_item {
+  font-weight: 500;
+  font-family: Saira-Medium;
+  font-size: 20px;
+  color: #1b2336;
+}
+header .navbar_info button {
+  font-family: Saira-Medium;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  width: 138px;
+  height: 60px;
+  border-radius: 10px;
+  background: linear-gradient(102deg, #083f9b 0%, #7f56d9 93.39%);
+}
+
+@media only screen and (max-width: 1050px) {
+  header .navbar_info {
+    -moz-column-gap: 40px;
+         column-gap: 40px;
+  }
+  header .navbar_info_list {
+    display: flex;
+    -moz-column-gap: 32px;
+         column-gap: 32px;
+  }
+  header .navbar_info_list_item {
+    font-size: 20px;
+    color: #1b2336;
+  }
+}
+@media only screen and (max-width: 700px) {
+  header .navbar_info {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+  header .navbar_info_list {
+    display: flex;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+  header .navbar_info_list_item {
+    font-size: 20px;
+    color: #1b2336;
+  }
+  header .navbar_info button {
+    height: 50px;
+  }
+}
+@media only screen and (max-width: 630px) {
+  header .navbar {
+    height: 80px;
+  }
+  header .navbar img {
+    height: 50px;
+  }
+  header .navbar_info {
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+  header .navbar_info_list {
+    display: none;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+  header .navbar_info_list_item {
+    font-size: 20px;
+    color: #1b2336;
+  }
+  header .navbar_info button {
+    height: 40px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  header .container {
+    padding: 0px 20px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  header .container {
+    padding: 0px 10px;
+  }
+  header .navbar {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    height: 60px;
+  }
+  header .navbar button {
+    width: 100px;
+    font-size: 16px;
+  }
+  header .navbar img {
+    height: 50px;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,353 @@
+#services {
+  margin-top: 40px;
+  background: linear-gradient(180deg, #dbedff 0%, rgba(219, 237, 255, 0) 100%);
+  height: -moz-fit-content;
+  height: fit-content;
+}
+#services .container .all {
+  width: 100%;
+}
+#services .container .engtepa {
+  width: 100%;
+}
+#services .container .engtepa .tepatexts {
+  margin-top: 20px;
+  text-align: center;
+}
+#services .container .engtepa .tepatexts .services_title {
+  font-family: Rowdies-Bold;
+  font-weight: 700px;
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #2aaa94;
+}
+#services .container .engtepa .tepatexts .service_title {
+  color: #4e596b;
+  text-align: center;
+  font-family: Inter-Medium;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+}
+#services .container .engtepa .ellipse {
+  margin-top: 30px;
+  position: absolute;
+}
+#services .container .service_cards {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+#services .container .service_cards .card1 {
+  overflow: hidden;
+  border-radius: 20px;
+  border: 0px 20px !important;
+  height: 571px;
+}
+#services .container .service_cards .card1 image:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s;
+}
+#services .container .service_cards .card1 .texts {
+  padding: 20px;
+  background: white;
+  flex-direction: row;
+}
+#services .container .service_cards .card1 .texts_tepa {
+  display: flex;
+  justify-content: space-between;
+}
+#services .container .service_cards .card1 .texts_tepa p {
+  font-family: Saira-Bold;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: #4e596b;
+}
+#services .container .service_cards .card1 .texts_tepa h6 {
+  font-family: Saira-Bold;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: #4e596b;
+}
+#services .container .service_cards .card1 .texts_uchd {
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: #324361;
+  max-width: 380px;
+}
+#services .container .service_cards .card1 .texts_pastt {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+#services .container .service_cards .card1 .texts_pastt h5 {
+  font-family: Saira-Bold;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: #4e596b;
+}
+#services .container .service_cards .card1 .texts_pastt .korzinka {
+  transition: box-shadow 0.3s;
+}
+#services .container .service_cards .card1 .texts_pastt .korzinka:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#services .container .service_cards .card2 {
+  overflow: hidden;
+  border-radius: 20px;
+  border-radius: 20px 20px 20px 20px;
+  opacity: 25;
+  height: 571px;
+}
+#services .container .service_cards .card2 .texts {
+  padding: 20px;
+  background: white;
+  flex-direction: row;
+}
+#services .container .service_cards .card2 .texts_tepa {
+  display: flex;
+  justify-content: space-between;
+}
+#services .container .service_cards .card2 .texts_tepa p {
+  font-family: Saira-Bold;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: #4e596b;
+}
+#services .container .service_cards .card2 .texts_tepa h6 {
+  font-family: Saira-Bold;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: #4e596b;
+}
+#services .container .service_cards .card2 .texts_uchd {
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: #324361;
+  max-width: 380px;
+}
+#services .container .service_cards .card2 .texts_pastt {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+#services .container .service_cards .card2 .texts_pastt h5 {
+  font-family: Saira-Bold;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: -0.03em;
+  text-align: left;
+  color: #4e596b;
+}
+
+@media (max-width: 1464px) {
+  #services .container .service_cards {
+    gap: 25px;
+  }
+}
+@media (max-width: 768px) {
+  #services {
+    background: linear-gradient(180deg, #dbedff 0%, rgba(219, 237, 255, 0) 100%);
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #services .container .engtepa {
+    width: 100%;
+  }
+  #services .container .engtepa .ellipse {
+    transform: scale(0.7);
+  }
+  #services .container .engtepa .tepatexts {
+    text-align: center;
+  }
+  #services .container .engtepa .tepatexts .services_title {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  #services .container .engtepa .tepatexts .service_title {
+    font-size: 20px;
+  }
+  #services .container .service_cards {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    row-gap: 20px;
+  }
+  #services .container .service_cards .card1 {
+    height: auto;
+    margin-bottom: 20px;
+  }
+  #services .container .service_cards .card1 .texts {
+    flex-direction: column;
+    max-width: 512px;
+  }
+  #services .container .service_cards .card1 .texts__tepa {
+    justify-content: space-between;
+  }
+  #services .container .service_cards .card1 .texts__tepa p {
+    font-size: 12px;
+  }
+  #services .container .service_cards .card1 .texts__tepa h6 {
+    font-size: 12px;
+  }
+  #services .container .service_cards .card1 .texts__uchd {
+    font-size: 20px;
+    line-height: 28px;
+    width: 100%;
+  }
+  #services .container .service_cards .card1 .texts__pastt {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  #services .container .service_cards .card1 .texts__pastt h5 {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 5px;
+  }
+  #services .container .service_cards .card2 {
+    height: auto;
+    margin-bottom: 20px;
+  }
+  #services .container .service_cards .card2 .texts {
+    flex-direction: column;
+    max-width: 512px;
+  }
+  #services .container .service_cards .card2 .texts__tepa {
+    justify-content: space-between;
+  }
+  #services .container .service_cards .card2 .texts__tepa p {
+    font-size: 12px;
+  }
+  #services .container .service_cards .card2 .texts__tepa h6 {
+    font-size: 12px;
+  }
+  #services .container .service_cards .card2 .texts__uchd {
+    font-size: 20px;
+    line-height: 28px;
+    width: 100%;
+  }
+  #services .container .service_cards .card2 .texts__pastt {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  #services .container .service_cards .card2 .texts__pastt h5 {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 576px) {
+  /* Styles for mobile devices (up to 576px) */
+  #services {
+    background: linear-gradient(180deg, #dbedff 0%, rgba(219, 237, 255, 0) 100%);
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #services .container .engtepa {
+    width: 100%;
+  }
+  #services .container .engtepa .ellipse {
+    margin-top: -30px;
+    margin-left: -30px;
+    transform: scale(0.4);
+  }
+  #services .container .engtepa .tepatexts {
+    text-align: center;
+  }
+  #services .container .engtepa .tepatexts .services_title {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  #services .container .engtepa .tepatexts .service_title {
+    font-size: 14px;
+  }
+  #services .container .service_cards {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    row-gap: 20px;
+  }
+  #services .container .service_cards .card1 {
+    height: auto;
+    margin-bottom: 20px;
+    max-width: 300px;
+  }
+  #services .container .service_cards .card1 .texts {
+    flex-direction: column;
+    max-width: 360px;
+  }
+  #services .container .service_cards .card1 .texts_tepa p {
+    font-size: 12px;
+  }
+  #services .container .service_cards .card1 .texts_tepa h6 {
+    font-size: 12px;
+  }
+  #services .container .service_cards .card1 .texts_uchd {
+    font-size: 18px;
+  }
+  #services .container .service_cards .card1 .texts_pastt {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #services .container .service_cards .card1 .texts_pastt h5 {
+    font-size: 10px;
+    line-height: 18px;
+    margin-bottom: 5px;
+  }
+  #services .container .service_cards .card1 .texts_pastt .korzinka {
+    transform: scale(0.5);
+  }
+  #services .container .service_cards .card2 {
+    height: auto;
+    margin-bottom: 20px;
+    max-width: 300px;
+  }
+  #services .container .service_cards .card2 .texts {
+    flex-direction: column;
+    max-width: 360px;
+  }
+  #services .container .service_cards .card2 .texts_tepa p {
+    font-size: 12px;
+  }
+  #services .container .service_cards .card2 .texts_tepa h6 {
+    font-size: 12px;
+  }
+  #services .container .service_cards .card2 .texts_uchd {
+    font-size: 18px;
+  }
+  #services .container .service_cards .card2 .texts_pastt {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #services .container .service_cards .card2 .texts_pastt h5 {
+    font-size: 10px;
+    line-height: 18px;
+    margin-bottom: 5px;
+  }
+  #services .container .service_cards .card2 .texts_pastt .korzinka {
+    transform: scale(0.5);
+  }
+}/*# sourceMappingURL=style.css.map */

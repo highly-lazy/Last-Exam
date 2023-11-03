@@ -1,0 +1,16 @@
+.main {
+  padding: 20px 0;
+  overflow-y: scroll;
+  width: 100%;
+  height: 80vh;
+}
+.main__up {
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 0 15px;
+}
+.main .table {
+  padding: 20px 15px;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */

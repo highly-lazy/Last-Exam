@@ -1,0 +1,24 @@
+.std {
+  overflow-y: scroll;
+  width: 100%;
+  height: 80vh;
+}
+.std .main__up {
+  background: #ffffff;
+  margin: 30px 15px;
+  border-radius: 5px;
+  padding: 15px;
+}
+.std .table {
+  margin: 40px auto;
+  width: 100%;
+  padding: 15px;
+}
+
+.ant-btn-primary {
+  display: none;
+}
+
+.edit {
+  color: blue;
+}/*# sourceMappingURL=style.css.map */

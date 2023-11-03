@@ -1,0 +1,44 @@
+.courses {
+  overflow-y: scroll;
+  padding: 20px;
+  width: 100%;
+  height: 80vh;
+}
+.courses .main__up2 {
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.courses .table {
+  width: 100%;
+  padding: 15px 0;
+}
+
+.edit .ant-btn {
+  background: blue !important;
+  color: #ffffff !important;
+}
+.edit .ant-btn:hover {
+  background: #5e5eff !important;
+  color: #ffffff !important;
+}
+
+.danger .ant-btn {
+  background: red !important;
+  color: #ffffff !important;
+}
+.danger .ant-btn:hover {
+  background: #ff4b4b !important;
+  color: #ffffff !important;
+}
+
+.ant-input {
+  width: 100% !important;
+}
+
+.ant-btn-primary {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

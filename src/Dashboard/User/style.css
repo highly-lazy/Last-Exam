@@ -1,0 +1,44 @@
+.settings {
+  padding: 15px;
+}
+.settings_header {
+  border-radius: 6px;
+  padding: 10px 15px;
+  background-color: #FFFFFF;
+}
+.settings_body {
+  margin-top: 40px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+}
+.settings_body .inputs {
+  margin: 10px 0 20px 0;
+  padding-bottom: 20px;
+}
+.settings_body .inputs .input p {
+  font-size: 18px;
+  font-family: "Saira Semibold";
+  color: #560c7d;
+}
+.settings_body .inputs .input input {
+  cursor: pointer;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.settings_body .settings_footer {
+  padding: 10px 0;
+}
+.settings_body .settings_footer button {
+  border-radius: 4px;
+  padding: 7px 20px;
+  background: blue;
+  color: #FFFFFF;
+}
+.settings_body .settings_footer button:hover {
+  background: rgba(0, 0, 255, 0.773);
+}
+.settings_body .settings_footer button:active {
+  box-shadow: 0 0 30px 2px blue;
+}/*# sourceMappingURL=style.css.map */

@@ -5,16 +5,32 @@ import "./style.scss";
 import logo from "../../assets/icons/logo.svg";
 
 const items = [
+  
   {
     key: "0",
     label: (
-      <Space>
-        <Link to={`/signin`}>Chiqish</Link>
-
+      <Space className="flex items-center  gap-[2px]">
+        <Link to={`/dashboard/user`}>
+        <i class='bx bx-cog' ></i>{""} Settings
+        
+        </Link>
+    
+      </Space>
+    ),
+  },{
+    key: "1",
+    label: (
+      <Space className="flex items-center gap-[3px]">
+        <Link to={`/signin`}>
+        <i class='bx bx-left-arrow-alt text-[20px] '></i>Logout
+        </Link>
+    
       </Space>
     ),
   },
+ 
 ];
+;
 
 const Index = () => {
 
@@ -25,7 +41,7 @@ const Index = () => {
   };
 
   return (
-    <div>
+    <div className="main1">
       <header className="flex items-center justify-between h-[80px] px-[50px] head">
         <img src={logo} alt="" />
 
@@ -34,7 +50,7 @@ const Index = () => {
             <i className="bx bx-menu text-[30px]"></i>
           </button>
           <div className="flex items-center gap-1 user">
-            <Dropdown
+          <Dropdown
               className="text-[#553737] flex items-center"
               menu={{
                 items,
@@ -46,7 +62,7 @@ const Index = () => {
                   <div className="flex items-center gap-1 user">
                     <i className="bx bxs-user-circle text-[30px]"></i>
                   </div>
-                  Abror Davlatov
+                  {localStorage.getItem('user')}
                 </Space>
               </a>
             </Dropdown>

@@ -1,0 +1,135 @@
+.service_card {
+  max-width: 512px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #FFF;
+  margin-bottom: 70px;
+}
+.service_card-header {
+  max-width: 100%;
+  height: 265px;
+}
+.service_card-header img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.service_card_body {
+  padding: 32px;
+}
+.service_card_body-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.service_card_body-top p {
+  color: #4E596B;
+  font-family: "Saira Medium";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 35px;
+  letter-spacing: -0.42px;
+}
+.service_card_body h4 {
+  color: #324361;
+  font-family: "Saira Semibold";
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 35px;
+  letter-spacing: -0.75px;
+  margin: 21px 0 33px 0;
+}
+.service_card_body-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.service_card_body-bottom p {
+  color: #5E6775;
+  font-family: "Saira Bold";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: -0.66px;
+}
+.service_card_body-bottom i {
+  color: #5E6775;
+  font-family: "Saira Bold";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: -0.66px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 565px) {
+  .service_card {
+    max-width: 512px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #FFF;
+  }
+  .service_card-header {
+    max-width: 100%;
+    height: 200px;
+  }
+  .service_card-header img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .service_card_body {
+    padding: 32px;
+  }
+  .service_card_body-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .service_card_body-top p {
+    color: #4E596B;
+    font-family: "Saira Medium";
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 35px;
+    letter-spacing: -0.42px;
+  }
+  .service_card_body h4 {
+    color: #324361;
+    font-family: "Saira Semibold";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.75px;
+    margin: 21px 0 33px 0;
+  }
+  .service_card_body-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .service_card_body-bottom p {
+    color: #5E6775;
+    font-family: "Saira Bold";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: -0.66px;
+  }
+  .service_card_body-bottom i {
+    color: #5E6775;
+    font-family: "Saira Bold";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: -0.66px;
+  }
+}/*# sourceMappingURL=style.css.map */

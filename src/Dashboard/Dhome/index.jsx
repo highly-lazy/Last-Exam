@@ -6,7 +6,7 @@ import "./style.scss";
 const index = () => {
   return (
     <>
-      <div className="ssss1">
+      <div className="ssss1 overflow-hidden">
         <div className="main__up">
           <Breadcrumb
             items={[

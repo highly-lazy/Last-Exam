@@ -1,6 +1,8 @@
 .std {
-  overflow: hidden;
+  overflow-y: scroll;
 
+  width: 100%;
+  height: 80vh;
   .main__up {
     background: #ffffff;
     margin: 30px 15px;

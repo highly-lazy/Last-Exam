@@ -1,3 +1,19 @@
-.xizmat{
-    color:#000;
+.main {
+  padding: 20px 0;
+  overflow-y: scroll;
+  width: 100%;
+  height: 80vh;
+
+  &__up {
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 0 15px;
+  }
+
+  & .table {
+    padding: 20px 15px;
+    width: 100%;
+    
+  }
 }

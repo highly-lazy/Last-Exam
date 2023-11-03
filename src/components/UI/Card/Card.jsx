@@ -1,10 +1,13 @@
 import { useState } from "react";
 import "./style.scss";
-import { Modal,Button } from "antd";
+import { Modal,Input, Form } from "antd";
+import React from "react";
 
 
 
 const Card = ({ state: { title, image, description } }) => {
+const MyFormItemContext = React.createContext([]);
+  
    const [isModalOpen, setIsModalOpen] = useState(false);
    const showModal = () => {
      setIsModalOpen(true);
@@ -15,6 +18,42 @@ const Card = ({ state: { title, image, description } }) => {
    const handleCancel = () => {
      setIsModalOpen(false);
    };
+
+   const onFinish = (value) => {
+     console.log(value);
+   };
+
+   function toArr(str) {
+     return Array.isArray(str) ? str : [str];
+   }
+   const MyFormItemGroup = ({ prefix, children }) => {
+     const prefixPath = React.useContext(MyFormItemContext);
+     const concatPath = React.useMemo(
+       () => [...prefixPath, ...toArr(prefix)],
+       [prefixPath, prefix]
+     );
+     return (
+       <MyFormItemContext.Provider value={concatPath}>
+         {children}
+       </MyFormItemContext.Provider>
+     );
+   };
+   const MyFormItem = ({ name, ...props }) => {
+     const prefixPath = React.useContext(MyFormItemContext);
+     const concatName =
+       name !== undefined ? [...prefixPath, ...toArr(name)] : undefined;
+     return <Form.Item name={concatName} {...props} />;
+   };
+
+   const onChange = (value) => {
+     // console.log(selected ${value});
+   };
+   const onSearch = (value) => {
+     // console.log('search:', value);
+   };
+
+   const filterOption = (input, option) =>
+     (option?.label ?? "").toLowerCase().includes(input.toLowerCase());
   return (
     <div className="card">
       <div className="card-header">
@@ -58,22 +97,29 @@ const Card = ({ state: { title, image, description } }) => {
           </button>
         </div>
       </div>
+
       <Modal
-        title="Basic Modal"
         open={isModalOpen}
-        onOk={handleOk}
+        cancelText="Bekor qilish"
         onCancel={handleCancel}
+        onOk={handleOk}
+        okText="Jo'natish"
       >
-
-        <div className="div">
-          
+        <div className="modal_top">
+          <span>Kurslar</span>
         </div>
-
-        <Button>
-          Add
-        </Button>
-
-        
+        <Form name="form_item_path" layout="vertical" onFinish={onFinish}>
+          <MyFormItemGroup prefix={["user"]}>
+            <MyFormItemGroup prefix={["name"]}>
+              <MyFormItem name="firstName" label="Enter your name">
+                <Input placeholder="Your name" required />
+              </MyFormItem>
+              <MyFormItem name="pnone_number" label="Phone number">
+                <Input placeholder="+998..." />
+              </MyFormItem>
+            </MyFormItemGroup>
+          </MyFormItemGroup>
+        </Form>
       </Modal>
     </div>
   );

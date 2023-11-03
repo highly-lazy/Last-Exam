@@ -1,13 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Table, Button, Space, Input, Modal, Form, Breadcrumb } from "antd";
 import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import "./style.scss";
+import coursesApi from './../../service/courses/index';
 
+const { TextArea } = Input;
 
 const index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    coursesApi.getAll().then((res) => {
+      console.log(res.data);
+      setCourses(res.data.courses);
+    }).catch((err) => {
+      console.log(err)
+    })
+  }, [])
+
+  const data = courses.map((item) => {
+      const data = {
+        id: item._id,
+        name: item.title,
+        count: item.students.length,
+        time: item.createdAt,
+      }
+      return data
+    })
+
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -17,68 +40,12 @@ const index = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
-  const [data, setData] = useState([]);
   const [order, setOrder] = useState("");
   const [about, setAbout] = useState("");
   const [name, setName] = useState("");
-
-  const [fileLink, setfileLink] = useState("")
-  const [editingRecord, setEditingRecord] = useState(null);
+  const [fileLink, setFileLink] = useState("");
   const [editModalVisible, setEditModalVisible] = useState(false);
 
-  const handleAdd = () => {
-    const newData = [
-      ...data,
-      {
-        order,
-        about,
-        name,
-        
-        fileLink,
-        time: moment().format("YYYY-MM-DD HH:mm:ss"),
-      },
-    ];
-    setData(newData);
-    setOrder("");
-    setAbout("");
-    setName("");
-    setfileLink("");
-  };
-
-  const handleEdit = (record) => {
-    setEditingRecord(record);
-    setOrder(record.order);
-    setAbout(record.about);
-    setName(record.name);
-    setfileLink(record.fileLink);
-    setEditModalVisible(true);
-  };
-
-  const handleSave = () => {
-    const updatedData = data.map((item) =>
-      item === editingRecord
-        ? {
-            ...item,
-            order,
-            about,
-            name,
-            fileLink,
-          }
-        : item
-    );
-    setData(updatedData);
-    setEditingRecord(null);
-    setOrder("");
-    setAbout("");
-    setName("");
-    setfileLink("");
-    setEditModalVisible(false);
-  };
-
-  const handleDelete = (record) => {
-    const newData = data.filter((item) => item !== record);
-    setData(newData);
-  };
 
   const columns = [
     {
@@ -88,8 +55,8 @@ const index = () => {
     },
     {
       title: "Kurs Id",
-      dataIndex: "",
-      key: "",
+      dataIndex: "id",
+      key: "id",
       render: (_, record) => <p>{uuidv4()} </p>,
     },
     {
@@ -99,8 +66,8 @@ const index = () => {
     },
     {
       title: "O'quvchilar soni",
-      dataIndex: "",
-      key: "",
+      dataIndex: "count",
+      key: "count",
     },
     {
       title: "Yaratilgan vaqti",
@@ -112,12 +79,16 @@ const index = () => {
       key: "action",
       render: (_, record) => (
         <Space>
-          <Button type="link" onClick={() => handleEdit(record)}>
-            Edit
-          </Button>
-          <Button type="link" onClick={() => handleDelete(record)}>
-            Delete
-          </Button>
+          <div className="edit">
+            <Button type="link" onClick={() => showModal()}>
+              Edit
+            </Button>
+          </div>
+          {/* <div className="danger">
+            <Button type="link" danger>
+              Delete
+            </Button>
+          </div> */}
         </Space>
       ),
     },
@@ -149,12 +120,14 @@ const index = () => {
         </button>
       </div>
 
-      <Table
-        columns={columns}
-        dataSource={data}
-        pagination={false}
-        rowKey={(record) => record.about}
-      />
+      <div className="table">
+        <Table
+          columns={columns}
+          dataSource={data}
+          pagination={false}
+          rowKey={(record) => record.about}
+        />
+      </div>
       <Modal
         title="Tahrirlash"
         visible={editModalVisible}
@@ -170,24 +143,21 @@ const index = () => {
           <Form.Item label="Kurs nomi">
             <Input value={name} onChange={(e) => setName(e.target.value)} />
           </Form.Item>
-
-          <Form.Item label="Fayl yuklang">
+          <Form.Item label="Fayl linki">
             <Input
               type="file"
               value={fileLink}
-              onChange={(e) => setfileLink(e.target.value)}
+              onChange={(e) => fileimageLink(e.target.value)}
             />
           </Form.Item>
 
           <button
             className="px-4 py-1 rounded-[15px] border-[1px] border-[#00000034]"
-            onClick={() => handleSave()}
           >
             O'zgartirish
           </button>
         </Form>
       </Modal>
-
       <Modal
         title="Basic Modal"
         open={isModalOpen}
@@ -206,20 +176,19 @@ const index = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <Input
-            placeholder="Kurs haqida"
+          <TextArea
+            rows={4}
             value={about}
+            placeholder="Kurs haqida"
             onChange={(e) => setAbout(e.target.value)}
           />
-
-          
-            <Input
-              type="file"
-              value={fileLink}
-              onChange={(e) => setfileLink(e.target.value)}
-            />
-          
-          <Button onClick={handleAdd}>Add</Button>
+          <Input
+          type="file"
+            placeholder="Fayl linki"
+            value={fileLink}
+            onChange={(e) => setFileLink(e.target.value)}
+          />
+          <Button>Add</Button>
         </Space>
       </Modal>
     </div>

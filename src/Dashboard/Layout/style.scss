@@ -1,5 +1,12 @@
 .ssss {
   overflow: hidden;
+ 
+}
+
+
+
+.main1 {
+  overflow: hidden;
 }
 
 .head {
@@ -32,6 +39,8 @@
   align-items: self-start;
   margin-top: 80px;
   gap: 30px;
+  // height: 900px;
+  overflow: hidden;
 
   background: rgba(74, 22, 189, 0.8) 100%;
   .sidebar {
